@@ -22,5 +22,4 @@ class Botao extends React.Component {
 }
 
 export default Botao;
-puts markdown.to_tsx  
 ```
