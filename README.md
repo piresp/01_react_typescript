@@ -8,7 +8,7 @@ cd {name}
 npm start  
 
 #### Criando componente  
-```react
+```js
 import React from 'react';
 
 class Botao extends React.Component {
