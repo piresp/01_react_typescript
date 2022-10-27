@@ -1,7 +1,7 @@
 # react_typescript_01  
 Curso de React: escrevendo com Typescript  
 
-#### Criando um Novo Nrojeto:  
+#### Criando um Novo Projeto:  
 
 ```
 npx create-react-app {name} --template typescript  
@@ -12,6 +12,11 @@ cd {name}
 ```
 npm start  
 ```  
+
+#### Instalando SASS
+```
+npm install --save-dev sass
+```
 
 #### Criando Componente via Classe (deprecated):  
 ```js
@@ -51,7 +56,7 @@ function Lista() {
 export default Lista;
 ```
 
-#### Criando Componente via Função Dinamicamente:
+#### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
 ```js
 import React from 'react'
 
