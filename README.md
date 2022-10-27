@@ -180,5 +180,7 @@ export default Botao;
 ```
 Chamando componente criado:  
 ```js
-<Botao texto="Botãozinho" />
+<Botao
+    texto="Botãozinho" 
+/>
 ```
