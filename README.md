@@ -188,8 +188,8 @@ Chamando componente criado:
 ### SRP Single Responsability principle:
 Neste bloco de codigo separamos a criação do 'li' e tiramos a responsabilidade dela em conter as props. O 'li' é importado, vindo de uma subpasta de '/Lista'.  
 
-```js key={ index }``` é necessario para que o map "não se perca"  
-```js { ...item }``` retira a necessidade de chamar as props dentro de ```js <Item />``` como ```js <Item tarefa={item.tarefa} tempo={item.tempo} />```  
+``` key={ index } ``` é necessario para que o map "não se perca"  
+``` { ...item } ``` retira a necessidade de chamar as props dentro de ``` <Item /> ``` como ``` js <Item tarefa={item.tarefa} tempo={item.tempo} /> ```  
 Diretorio: /Lista/index.tsx:  
 ```js
 import style from './Lista.module.scss';
