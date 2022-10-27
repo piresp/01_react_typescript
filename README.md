@@ -185,3 +185,57 @@ Chamando componente criado:
     texto="Botãozinho" 
 />
 ```
+### SRP Single Responsability principle:
+Neste bloco de codigo separamos a criação do 'li' e tiramos a responsabilidade dela em conter as props. O 'li' é importado, vindo de uma subpasta de '/Lista'.  
+
+**key={ index }** é necessario para que o map "não se perca"  
+**{ ...item }** retira a necessidade de chamar as props dentro de **<Item />** como **<Item tarefa={item.tarefa} tempo={item.tempo} />**
+Diretorio: /Lista/index.tsx:  
+```js
+import style from './Lista.module.scss';
+import Item from './Item'
+
+export default function Lista() {
+    const tarefas = [{
+        tarefa: 'React',
+        tempo: '02:00:00'
+    }, {
+        tarefa: 'Javascript',
+        tempo: '01:00:00'
+    }, {
+        tarefa: 'Typescript',
+        tempo: '03:00:00'
+    }]
+    return (
+        <aside className={style.listaTarefas}>
+            <h2>Estudos do dia</h2>
+            <ul>
+                {tarefas.map((item, index) => (
+                    <Item
+                        {...item}
+                        key={index}
+                    />
+                ))}
+            </ul>
+        </aside>
+    )
+}
+
+export default Lista;
+```
+-------------------
+Passagem implicita de props na função  
+
+/Lista/Item/index.tsx  
+```js
+import style from '../Lista.module.scss'
+
+export default function Item({ tarefa, tempo } : { tarefa: string, tempo: string }) {
+    return (
+        <li className={style.item}>
+            <h3> {tarefa} </h3>
+            <span> {tempo} </span>
+        </li>
+    )
+}
+```
