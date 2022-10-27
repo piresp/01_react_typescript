@@ -31,7 +31,8 @@ Dentro de tsconfig.json:
 }
 ```
 
-#### Criando Componente via Classe (deprecated):  
+#### Criando Componente via Classe (deprecated):
+Os desenvolvedores do React disseram que não pretendem continuar implementando novas funcionalidades para componentes criados por Classe.  
 ```js
 import React from 'react';
 
@@ -102,7 +103,7 @@ function Lista() {
 export default Lista;
 ```
 #### Usando CSS Module para implementar estilos
-Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito  
+Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
 ```js
 import React from 'react'
