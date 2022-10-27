@@ -1,7 +1,7 @@
 # react_typescript_01  
 Curso de React: escrevendo com Typescript  
 
-#### Criando um Novo Projeto:  
+### Criando um Novo Projeto:  
 
 ```
 npx create-react-app {name} --template typescript  
@@ -18,7 +18,7 @@ npm start
 npm install --save-dev sass
 ```
 
-#### Instalando typescript-plugin-css-modules:
+### Instalando typescript-plugin-css-modules:
 ```
 npm install -D typescript-plugin-css-modules
 ```
@@ -31,7 +31,7 @@ Dentro de tsconfig.json:
 }
 ```
 
-#### Criando Componente via Classe (deprecated):
+### Criando Componente via Classe (deprecated):
 Os desenvolvedores do React disseram que não pretendem continuar implementando novas funcionalidades para componentes criados por Classe.  
 ```js
 import React from 'react';
@@ -49,7 +49,7 @@ class Botao extends React.Component {
 export default Botao;
 ```
 
-#### Criando Componente via Função:
+### Criando Componente via Função:
 ```js
 import React from 'react'
 
@@ -70,7 +70,7 @@ function Lista() {
 export default Lista;
 ```
 
-#### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
+### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
 ```js
 import React from 'react'
 
@@ -102,7 +102,7 @@ function Lista() {
 
 export default Lista;
 ```
-#### Usando CSS Module para implementar estilos
+### Usando CSS Module para implementar estilos
 Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
 ```js
@@ -137,7 +137,7 @@ function Lista() {
 
 export default Lista;
 ```
-#### Props como children e atributo convencional:
+### Props como children e atributo convencional:
 Declaração do componente, criado passando parâmetro **<{ children:any }>**.
 ```js
 import React from 'react';
