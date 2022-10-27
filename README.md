@@ -23,7 +23,7 @@ npm install --save-dev sass
 npm install -D typescript-plugin-css-modules
 ```
 Dentro de tsconfig.json:  
-```typescript
+```js
 {
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
@@ -33,7 +33,7 @@ Dentro de tsconfig.json:
 
 #### Criando Componente via Classe (deprecated):
 Os desenvolvedores do React disseram que não pretendem continuar implementando novas funcionalidades para componentes criados por Classe.  
-```typescript
+```js
 import React from 'react';
 
 class Botao extends React.Component {
@@ -50,7 +50,7 @@ export default Botao;
 ```
 
 #### Criando Componente via Função:
-```typescript
+```js
 import React from 'react'
 
 function Lista() {
@@ -71,7 +71,7 @@ export default Lista;
 ```
 
 #### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
-```typescript
+```js
 import React from 'react'
 
 function Lista() {
@@ -105,7 +105,7 @@ export default Lista;
 #### Usando CSS Module para implementar estilos
 Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
-```typescript
+```js
 import React from 'react'
 import style from './Lista.module.scss';
 
@@ -139,7 +139,7 @@ export default Lista;
 ```
 #### Props:
 Declaração do componente, criado passando parâmetro **<{ children:any }>**.
-```typescript
+```js
 import React from 'react';
 import style from './Botao.module.scss';
 
@@ -156,13 +156,13 @@ class Botao extends React.Component<{ children:any }> {
 export default Botao;
 ```
 Chamando componente criado:
-```typescript
+```js
 <Botao>
     Botãozinho
 </Botao>
 ```
 Declaração do componente, criado passandpo parâmetro fixo **<{ texto: string }>**
-```typescript
+```js
 import React from 'react';
 import style from './Botao.module.scss';
 
@@ -179,6 +179,6 @@ class Botao extends React.Component<{ texto: string}> {
 export default Botao;
 ```
 Chamando componente criado:  
-```typescript
+```js
 <Botao texto="Botãozinho" />
 ```
