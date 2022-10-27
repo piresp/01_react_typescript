@@ -102,7 +102,7 @@ function Lista() {
 
 export default Lista;
 ```
-### Usando CSS Module para implementar estilos
+### Usando CSS Module para implementar estilos:
 Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
 ```js
