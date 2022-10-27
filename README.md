@@ -137,7 +137,7 @@ function Lista() {
 
 export default Lista;
 ```
-#### Props:
+#### Props como children e atributo convencional:
 Declaração do componente, criado passando parâmetro **<{ children:any }>**.
 ```js
 import React from 'react';
@@ -162,7 +162,7 @@ Chamando componente criado:
 </Botao>
 ```
 -------------------
-Declaração do componente, criado passandpo parâmetro fixo **<{ texto: string }>**
+Declaração do componente, criado passandpo parâmetro convencional **<{ texto: string }>**
 ```js
 import React from 'react';
 import style from './Botao.module.scss';
