@@ -13,9 +13,22 @@ cd {name}
 npm start  
 ```  
 
-#### Instalando SASS
+#### Instalando SASS:
 ```
 npm install --save-dev sass
+```
+
+#### Instalando typescript-plugin-css-modules:
+```
+npm install -D typescript-plugin-css-modules
+```
+Dentro de tsconfig.json:  
+```js
+{
+  "compilerOptions": {
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  }
+}
 ```
 
 #### Criando Componente via Classe (deprecated):  
