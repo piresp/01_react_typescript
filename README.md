@@ -186,7 +186,7 @@ Chamando componente criado:
 />
 ```
 ### SRP Single Responsability principle:
-Neste bloco de codigo separamos a criação do 'li' e tiramos a responsabilidade dela em conter as props. O 'li' é importado, vindo de uma subpasta de '/Lista'.  
+Neste bloco de codigo separamos a criação do ```<li></li>``` e tiramos a responsabilidade dela em conter as props. O mesmo é importado, vindo de uma subpasta de '/Lista'.  
 
 ``` key={ index } ``` é necessario para que o map "não se perca"  
 ``` { ...item } ``` retira a necessidade de chamar as props dentro de ``` <Item /> ``` como ``` js <Item tarefa={item.tarefa} tempo={item.tempo} /> ```  
