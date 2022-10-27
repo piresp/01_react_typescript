@@ -23,6 +23,15 @@ npm install --save-dev sass
 npm install -D typescript-plugin-css-modules
 ```
 
+##### Dentro de tsconfig.json:
+```js
+{
+  "compilerOptions": {
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  }
+}
+```
+
 #### Criando Componente via Classe (deprecated):  
 ```js
 import React from 'react';
