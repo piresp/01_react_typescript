@@ -18,6 +18,11 @@ npm start
 npm install --save-dev sass
 ```
 
+#### Instalando "typescript-plugin-css-modules"
+```
+npm install -D typescript-plugin-css-modules
+```
+
 #### Criando Componente via Classe (deprecated):  
 ```js
 import React from 'react';
