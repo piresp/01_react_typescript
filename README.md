@@ -22,8 +22,7 @@ npm install --save-dev sass
 ```
 npm install -D typescript-plugin-css-modules
 ```
-
-##### Dentro de tsconfig.json:
+Dentro de tsconfig.json:  
 ```js
 {
   "compilerOptions": {
