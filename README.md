@@ -138,7 +138,7 @@ function Lista() {
 export default Lista;
 ```
 ### Props como children e atributo convencional:
-Declaração do componente, criado passando parâmetro **<{ children:any }>**.
+Declaração do componente, criado passando parâmetro ```<{ children:any }>```.
 ```js
 import React from 'react';
 import style from './Botao.module.scss';
@@ -162,7 +162,7 @@ Chamando componente criado:
 </Botao>
 ```
 -------------------
-Declaração do componente, criado passandpo parâmetro convencional **<{ texto: string }>**
+Declaração do componente, criado passandpo parâmetro convencional ```<{ texto: string }>```
 ```js
 import React from 'react';
 import style from './Botao.module.scss';
@@ -224,7 +224,7 @@ export default function Lista() {
 export default Lista;
 ```
 -------------------
-Passagem implicita de props na função  
+Passagem implicita de props na função:  
 
 /Lista/Item/index.tsx  
 ```js
