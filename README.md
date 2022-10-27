@@ -1,13 +1,19 @@
 # react_typescript_01  
 Curso de React: escrevendo com Typescript  
 
-#### Criando um novo projeto:  
-  
-npx create-react-app {name} --template typescript  
-cd {name}  
-npm start  
+#### Criando um Novo Nrojeto:  
 
-#### Criando componente:  
+```
+npx create-react-app {name} --template typescript  
+```
+```
+cd {name}  
+```  
+```
+npm start  
+```  
+
+#### Criando Componente via Classe (deprecated):  
 ```js
 import React from 'react';
 
@@ -22,4 +28,58 @@ class Botao extends React.Component {
 }
 
 export default Botao;
+```
+
+#### Criando Componente via Função:
+```js
+import React from 'react'
+
+function Lista() {
+    return (
+        <aside>
+            <h2>Estudos do dia</h2>
+            <ul>
+                <li>
+                    <h3>React</h3>
+                    <span>04:00:00</span>
+                </li>
+            </ul>
+        </aside>
+    )
+}
+
+export default Lista;
+```
+
+#### Criando Componente via Função Dinamicamente:
+```js
+import React from 'react'
+
+function Lista() {
+    const tarefas = [{
+        tarefa: 'React',
+        tempo: '02:00:00'
+    }, {
+        tarefa: 'Javascript',
+        tempo: '01:00:00'
+    }, {
+        tarefa: 'Typescript',
+        tempo: '03:00:00'
+    }]
+    return (
+        <aside>
+            <h2>Estudos do dia</h2>
+            <ul>
+                {tarefas.map((item, index) => (
+                    <li key={index}>
+                        <h3> {item.tarefa} </h3>
+                        <span> {item.tempo} </span>
+                    </li>
+                ))}
+            </ul>
+        </aside>
+    )
+}
+
+export default Lista;
 ```
