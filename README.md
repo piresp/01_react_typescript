@@ -161,6 +161,7 @@ Chamando componente criado:
     Botãozinho
 </Botao>
 ```
+-------------------
 Declaração do componente, criado passandpo parâmetro fixo **<{ texto: string }>**
 ```js
 import React from 'react';
