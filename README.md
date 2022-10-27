@@ -23,7 +23,7 @@ npm install --save-dev sass
 npm install -D typescript-plugin-css-modules
 ```
 Dentro de tsconfig.json:  
-```js
+```typescript
 {
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
@@ -33,7 +33,7 @@ Dentro de tsconfig.json:
 
 #### Criando Componente via Classe (deprecated):
 Os desenvolvedores do React disseram que não pretendem continuar implementando novas funcionalidades para componentes criados por Classe.  
-```js
+```typescript
 import React from 'react';
 
 class Botao extends React.Component {
@@ -50,7 +50,7 @@ export default Botao;
 ```
 
 #### Criando Componente via Função:
-```js
+```typescript
 import React from 'react'
 
 function Lista() {
@@ -71,7 +71,7 @@ export default Lista;
 ```
 
 #### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
-```js
+```typescript
 import React from 'react'
 
 function Lista() {
@@ -105,7 +105,7 @@ export default Lista;
 #### Usando CSS Module para implementar estilos
 Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
-```js
+```typescript
 import React from 'react'
 import style from './Lista.module.scss';
 
@@ -136,4 +136,49 @@ function Lista() {
 }
 
 export default Lista;
+```
+#### Props:
+Declaração do componente, criado passando parâmetro **<{ children:any }>**.
+```typescript
+import React from 'react';
+import style from './Botao.module.scss';
+
+class Botao extends React.Component<{ children:any }> {
+    render() {
+        return (
+            <button className={style.botao}>
+                {this.props.children}
+            </button>
+        )
+    }
+}
+
+export default Botao;
+```
+Chamando componente criado:
+```typescript
+<Botao>
+    Botãozinho
+</Botao>
+```
+Declaração do componente, criado passandpo parâmetro fixo **<{ texto: string }>**
+```typescript
+import React from 'react';
+import style from './Botao.module.scss';
+
+class Botao extends React.Component<{ texto: string}> {
+    render() {
+        return (
+            <button className={style.botao}>
+                {this.props.texto}
+            </button>
+        )
+    }
+}
+
+export default Botao;
+```
+Chamando componente criado:  
+```typescript
+<Botao texto="Botãozinho" />
 ```
