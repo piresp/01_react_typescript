@@ -51,7 +51,7 @@ function Lista() {
 export default Lista;
 ```
 
-#### Criando Componente via Função Dinamicamente:
+#### Criando Componente via Função Dinamicamente "Don't repeay yourself (DRY)":
 ```js
 import React from 'react'
 
