@@ -2,7 +2,7 @@
 Curso de React: escrevendo com Typescript  
 
 ### Criando um Novo Projeto:  
-
+Instalando o projeto:  
 ```
 npx create-react-app {name} --template typescript  
 ```
@@ -12,15 +12,13 @@ cd {name}
 ```
 npm start  
 ```  
-
-#### Instalando SASS:
+Instalando o SASS:  
 ```
-npm install --save-dev sass
+npm install --save-dev sass  
 ```
-
-### Instalando typescript-plugin-css-modules:
+Instalando typescript-plugin-css-modules:  
 ```
-npm install -D typescript-plugin-css-modules
+npm install -D typescript-plugin-css-modules  
 ```
 Dentro de tsconfig.json:  
 ```js
@@ -270,6 +268,58 @@ export default function Relogio() {
             <span>0</span>
             <span>0</span>
         </>
+    )
+}
+```
+### State:  
+Nesta parte do codigo nós alteramos o estado do componente Lista para que a cada click ele adicione uma array pre-determinada nova.  
+##### Setando Tarefas:
+Agora, nossa necessidade é entender a função ``` useState() ```.  
+O **primeiro** parâmetro ``` initialState: ``` indica o **estado inicial** do parâmetro passado, neste caso, passamos uma array com três elementos.  
+O **segundo** parâmetro ``` React.Dispatch<React.SetStateAction ``` recebe o parâmetro de **alteração de estado**.  
+```js
+const [tarefas, setTarefas] = useState([{
+        tarefa: 'React',
+        tempo: '02:00:00'
+    }, {
+        tarefa: 'Javascript',
+        tempo: '01:00:00'
+    }, {
+        tarefa: 'Typescript',
+        tempo: '03:00:00'
+    }])
+```
+Logo após declarar o array **tarefas** precisamos chamar o evento que mudará este estado, neste caso será o ``` onClick= ```. Após chamar o ``` onClick= ```, chamaremos uma função anônima representada por ``` () => { ... } ``` juntamente com o **segundo** parâmetro passado ``` setTarefas ```, dentro dele nós passaremos o array pre-existente ```...tarefas``` e o novo objeto que será introduzido ``` { tarefa: "Estudar Estado", tempo: "05:00:00"} ```.  
+```js
+import { useState } from 'react';
+import style from './Lista.module.scss';
+import Item from './Item'
+
+export default function Lista() {
+    const [tarefas, setTarefas] = useState([{
+        tarefa: 'React',
+        tempo: '02:00:00'
+    }, {
+        tarefa: 'Javascript',
+        tempo: '01:00:00'
+    }, {
+        tarefa: 'Typescript',
+        tempo: '03:00:00'
+    }])
+    return (
+        <aside className={style.listaTarefas}>
+            <h2 onClick={() => {
+                setTarefas([...tarefas, { tarefa: "Estudar Estado", tempo: "05:00:00"}])
+            }}>Estudos do dia</h2>
+            <ul>
+                {tarefas.map((item, index) => (
+                    <Item
+                        { ...item }
+                        key={ index }
+                    />
+                ))}
+            </ul>
+        </aside>
     )
 }
 ```
