@@ -239,3 +239,37 @@ export default function Item({ tarefa, tempo } : { tarefa: string, tempo: string
     )
 }
 ```
+
+### React Fragment:
+Quando se cria um componente e o mesmo necessita de um **componente pai** deve se usar esta sintaxe para **burlar** o xml.  
+Primeira forma utiliza-se ``` <React.Fragment> ... </React.Fragment>``` para tal necessidade.  
+```js
+import React from 'react'
+
+export default function Relogio() {
+    return (
+        <React.Fragment>
+            <span>0</span>
+            <span>0</span>
+            <span>:</span>
+            <span>0</span>
+            <span>0</span>
+        </React.Fragment>
+    )
+}
+```
+-------------------
+A segunda forma, mais limpa, utiliza-se as tags ```<> ... </>``` para alcançar o mesmo resultado.  
+```js
+export default function Relogio() {
+    return (
+        <>
+            <span>0</span>
+            <span>0</span>
+            <span>:</span>
+            <span>0</span>
+            <span>0</span>
+        </>
+    )
+}
+```
