@@ -2,7 +2,7 @@
 Curso de React: escrevendo com Typescript  
 
 ### Criando um Novo Projeto:  
-
+Instalando o projeto:  
 ```
 npx create-react-app {name} --template typescript  
 ```
