@@ -102,7 +102,7 @@ function Lista() {
 
 export default Lista;
 ```
-### Usando CSS Module para implementar estilos
+### Usando CSS Module para implementar estilos:
 Usando este modulo, dentro do html do site se altera a classe do css criando um id após a classe, torna mais seguro a implementação de novas classes sem causar conflito.  
 
 ```js
@@ -137,8 +137,8 @@ function Lista() {
 
 export default Lista;
 ```
-### Props como children e atributo convencional:
-Declaração do componente, criado passando parâmetro **<{ children:any }>**.
+### Props como 'children' e por 'atributo convencional':
+Declaração do componente, criado passando parâmetro ```<{ children:any }>```:
 ```js
 import React from 'react';
 import style from './Botao.module.scss';
@@ -162,7 +162,7 @@ Chamando componente criado:
 </Botao>
 ```
 -------------------
-Declaração do componente, criado passandpo parâmetro convencional **<{ texto: string }>**
+Declaração do componente, criado passandpo parâmetro convencional ```<{ texto: string }>```:
 ```js
 import React from 'react';
 import style from './Botao.module.scss';
@@ -184,4 +184,92 @@ Chamando componente criado:
 <Botao
     texto="Botãozinho" 
 />
+```
+### SRP Single Responsability principle:
+Neste bloco de codigo separamos a criação do ```<li></li>``` e tiramos a responsabilidade dela em conter as props. O mesmo é importado, vindo de uma subpasta de '/Lista'.  
+
+``` key={ index } ``` é necessario para que o map "não se perca"  
+``` { ...item } ``` retira a necessidade de chamar as props dentro de ``` <Item /> ``` como ``` js <Item tarefa={item.tarefa} tempo={item.tempo} /> ```  
+Diretorio: /Lista/index.tsx:  
+```js
+import style from './Lista.module.scss';
+import Item from './Item'
+
+export default function Lista() {
+    const tarefas = [{
+        tarefa: 'React',
+        tempo: '02:00:00'
+    }, {
+        tarefa: 'Javascript',
+        tempo: '01:00:00'
+    }, {
+        tarefa: 'Typescript',
+        tempo: '03:00:00'
+    }]
+    return (
+        <aside className={style.listaTarefas}>
+            <h2>Estudos do dia</h2>
+            <ul>
+                {tarefas.map((item, index) => (
+                    <Item
+                        {...item}
+                        key={index}
+                    />
+                ))}
+            </ul>
+        </aside>
+    )
+}
+
+export default Lista;
+```
+-------------------
+Passagem implicita de props na função:  
+
+/Lista/Item/index.tsx  
+```js
+import style from '../Lista.module.scss'
+
+export default function Item({ tarefa, tempo } : { tarefa: string, tempo: string }) {
+    return (
+        <li className={style.item}>
+            <h3> {tarefa} </h3>
+            <span> {tempo} </span>
+        </li>
+    )
+}
+```
+
+### React Fragment:
+Quando se cria um componente e o mesmo necessita de um **componente pai** deve se usar esta sintaxe para **"burlar"** o xml.  
+Primeira forma utiliza-se ``` <React.Fragment> ... </React.Fragment>``` para tal necessidade.  
+```js
+import React from 'react'
+
+export default function Relogio() {
+    return (
+        <React.Fragment>
+            <span>0</span>
+            <span>0</span>
+            <span>:</span>
+            <span>0</span>
+            <span>0</span>
+        </React.Fragment>
+    )
+}
+```
+-------------------
+A segunda forma, mais limpa, utiliza-se as tags ```<> ... </>``` para alcançar o mesmo resultado.  
+```js
+export default function Relogio() {
+    return (
+        <>
+            <span>0</span>
+            <span>0</span>
+            <span>:</span>
+            <span>0</span>
+            <span>0</span>
+        </>
+    )
+}
 ```
