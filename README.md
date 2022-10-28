@@ -274,7 +274,7 @@ export default function Relogio() {
 ### State:  
 Nesta parte do codigo nós alteramos o estado do componente Lista para que a cada click ele adicione uma array pre-determinada nova.  
 ##### Setando Tarefas:
-Primeiro devemos entender a função ``` useState() ``` e importa-la.    
+Agora, nossa necessidade é entender a função ``` useState() ```.  
 O **primeiro** parâmetro ``` initialState: ``` indica o **estado inicial** do parâmetro passado, neste caso, passamos uma array com três elementos.  
 O **segundo** parâmetro ``` React.Dispatch<React.SetStateAction ``` recebe o parâmetro de **alteração de estado**.  
 ```js
