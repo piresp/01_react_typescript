@@ -241,7 +241,7 @@ export default function Item({ tarefa, tempo } : { tarefa: string, tempo: string
 ```
 
 ### React Fragment:
-Quando se cria um componente e o mesmo necessita de um **componente pai** deve se usar esta sintaxe para **burlar** o xml.  
+Quando se cria um componente e o mesmo necessita de um **componente pai** deve se usar esta sintaxe para **"burlar"** o xml.  
 Primeira forma utiliza-se ``` <React.Fragment> ... </React.Fragment>``` para tal necessidade.  
 ```js
 import React from 'react'
