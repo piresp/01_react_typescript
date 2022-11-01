@@ -335,7 +335,7 @@ state = {
     }
 ```
 
-Dentro da tag ``` <input /> de tipo **"text"** definimos seu valor com o objeto criado a cima:  
+Dentro da tag ``` <input /> ``` de tipo **"text"** definimos seu valor com o objeto criado a cima:  
 
 ```js
 value={this.state.tarefa} 
