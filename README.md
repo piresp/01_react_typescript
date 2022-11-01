@@ -436,3 +436,23 @@ Caso ele não receba nenhum parâmetro nós criaremos uma objeto constante antes
 ```js
 const { type = "button" } = this.props;
 ```
+
+Segue o codigo completo do componente:  
+
+```js
+import React from 'react';
+import style from './Botao.module.scss';
+
+class Botao extends React.Component<{ type?: "button" | "submit" | "reset" | undefined, children: any }> {
+    render() {
+        const { type = "button" } = this.props;
+        return (
+            <button type={type} className={style.botao}>
+                {this.props.children}
+            </button>
+        )
+    }
+}
+
+export default Botao;
+```
