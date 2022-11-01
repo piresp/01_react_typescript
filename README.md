@@ -335,11 +335,31 @@ state = {
     }
 ```
 
-Dentro da tag ``` <input /> ``` de ``` type="text" ``` definimos seu valor com o objeto criado a cima: ``` value={this.state.tarefa} ``` e capturamos o evento com a propriedade ``` onChange={ evento => this.setState({ ...this.state, tarefa: evento.target.value })} ```  
+Dentro da tag ``` <input /> de tipo **"text"** definimos seu valor com o objeto criado a cima:  
 
-Na outra tag ``` <input /> ``` de ``` type="time" ``` definimos seu valor com o objeto criado a cima: ``` value={this.state.tempo} `` e capturamos o evento com a propriedade ``` onChange={ evento => this.setState({ ...this.state, tempo: evento.target.value })} ```  
+```js
+value={this.state.tarefa} 
+```
 
-Para mostrarmos no console o objeto capturado no submit devemos criar uma função que irá receber um **evento** de tipo **React.FormEvent**.  
+E capturamos o objeto alterado pelo evento com a propriedade:  
+
+```js
+onChange={ evento => this.setState({ ...this.state, tarefa: evento.target.value })} 
+```  
+
+Na outra tag ``` <input /> ``` de tipo **"time"** definimos seu valor com o objeto criado a cima:  
+
+```js
+value={this.state.tempo} 
+```
+
+E capturamos o objeto alterado pelo evento com a propriedade:  
+
+```js 
+onChange={ evento => this.setState({ ...this.state, tempo: evento.target.value })} 
+```  
+
+Para mostrarmos no console o objeto capturado no submit devemos criar uma função que irá receber um **evento** de tipo **React.FormEvent**:    
 
 ```js
 adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
@@ -348,7 +368,11 @@ adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
     }
 ```
 
-Agora para que tudo isso funcione devemos mudar uma propriedade dentro da tag ``` <form> </form> ``` que é a ``` onSubmit={this.adicionarTarefa.bind(this)} ```, passamos a função **bind** por conta de ser uma class compontent que não consegue acessar o atributo **this** de "fora de seu escopo".  
+Agora para que tudo isso funcione devemos mudar uma propriedade dentro da tag ``` <form> </form> ```. Passamos a função **bind** por conta de ser uma class compontent que não consegue acessar o atributo **this** de "fora de seu escopo":  
+
+```js
+onSubmit={this.adicionarTarefa.bind(this)} 
+```
 
 Segue o codigo completo:  
 
