@@ -13,7 +13,7 @@ export default function Lista() {
         tarefa: 'Typescript',
         tempo: '03:00:00'
     }, {
-        tarefa: 'Cu',
+        tarefa: 'Amilton',
         tempo: '00:30:00'
     }])
     return (
