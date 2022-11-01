@@ -12,6 +12,9 @@ export default function Lista() {
     }, {
         tarefa: 'Typescript',
         tempo: '03:00:00'
+    }, {
+        tarefa: 'Cu',
+        tempo: '00:30:00'
     }])
     return (
         <aside className={style.listaTarefas}>
