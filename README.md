@@ -323,3 +323,74 @@ export default function Lista() {
     )
 }
 ```
+
+### Pegando Parâmetros de Class Component: 
+
+Dentro de class, antes de render(), temos que criar um objeto que vai conter as propriedades que queremos pegar, neste caso, será pego a 'tarefa' e o 'tempo'.  
+
+```js
+state = {
+        tarefa: "",
+        tempo: "00:00"
+    }
+```
+
+Dentro da tag ``` <input /> ``` de ``` type="text" ``` definimos seu valor com o objeto criado a cima: ``` value={this.state.tarefa} ``` e capturamos o evento com a propriedade ``` onChange={ evento => this.setState({ ...this.state, tarefa: evento.target.value })} ```  
+
+Na outra tag ``` <input /> ``` de ``` type="time" ``` definimos seu valor com o objeto criado a cima: ``` value={this.state.tempo} `` e capturamos o evento com a propriedade ``` onChange={ evento => this.setState({ ...this.state, tempo: evento.target.value })} ```  
+
+Para mostrarmos no console o objeto capturado no submit devemos criar uma função que irá receber um **evento** de tipo **React.FormEvent**.  
+
+```js
+adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        evento.preventDefault();
+        console.log('state: ', this.state);
+    }
+```
+
+Agora para que tudo isso funcione devemos mudar uma propriedade dentro da tag ``` <form> </form> ``` que é a ``` onSubmit={this.adicionarTarefa.bind(this)} ```, passamos a função **bind** por conta de ser uma class compontent que não consegue acessar o atributo **this** de "fora de seu escopo".  
+
+Segue o codigo completo:  
+
+```js
+import React from 'react';
+import Botao from '../Botao';
+import style from './Formulario.module.scss';
+
+class Formulario extends React.Component {
+    state = {
+        tarefa: "",
+        tempo: "00:00"
+    }
+
+    adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        evento.preventDefault();
+        console.log('state: ', this.state);
+    }
+
+    render() {
+        return (
+            <form className={style.novaTarefa} onSubmit={this.adicionarTarefa.bind(this)}>
+                <div className={style.inputContainer}>
+                    <label htmlFor="tarefa">Adicione um estudo</label>
+                    <input name="tarefa" id="tarefa" placeholder="O que você quer estudar" type="text"
+                        value={this.state.tarefa} onChange={ evento => this.setState({ ...this.state, tarefa: evento.target.value })}/>
+                </div>
+                <div className={style.inputContainer}>
+                    <label htmlFor="tempo">Tempo</label>
+                    <input name="tempo" id="tempo" step="1" min="00:00:00" max="01:30:00" type="time" 
+                        value={this.state.tempo} onChange={ evento => this.setState({ ...this.state, tempo: evento.target.value })} required/>
+                </div>
+                <Botao>
+                    Botaozinho
+                </Botao>
+            </form>
+        )
+    }
+}
+
+export default Formulario;
+```
+
+
+
