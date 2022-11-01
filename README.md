@@ -416,5 +416,23 @@ class Formulario extends React.Component {
 export default Formulario;
 ```
 
+### Passando Tipo Para Componente React:
 
+Aqui nós queremos passar o tipo **submit** dentro de type no compontente **"Botão"** como descrito abaixo.  
 
+```js
+<Botao type="submit">
+      Botaozinho
+</Botao>
+```
+Para isso entraremos dentro do componente botão e passaremos o seguinte atributo que ele pode ou não receber:  
+
+```js
+React.Component<{ type?: "button" | "submit" | "reset" | undefined, children: any }>
+```
+
+Caso ele não receba nenhum parâmetro nós criaremos uma objeto constante antes de render para armazenar o type:  
+
+```js
+const { type = "button" } = this.props;
+```
