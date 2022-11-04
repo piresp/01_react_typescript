@@ -4,10 +4,10 @@ Curso de React: escrevendo com Typescript
 ### Criando um Novo Projeto:  
 Instalando o projeto:  
 ```
-npx create-react-app {name} --template typescript  
+npx create-react-app project_name --template typescript  
 ```
 ```
-cd {name}  
+cd project_name  
 ```  
 ```
 npm start  
@@ -187,7 +187,7 @@ Chamando componente criado:
 Neste bloco de codigo separamos a criação do ```<li></li>``` e tiramos a responsabilidade dela em conter as props. O mesmo é importado, vindo de uma subpasta de '/Lista'.  
 
 ``` key={ index } ``` é necessario para que o map "não se perca"  
-``` { ...item } ``` retira a necessidade de chamar as props dentro de ``` <Item /> ``` como ``` js <Item tarefa={item.tarefa} tempo={item.tempo} /> ```  
+``` { ...item } ``` retira a necessidade de chamar as props dentro de ``` <Item /> ``` como ``` <Item tarefa={item.tarefa} tempo={item.tempo} /> ```  
 Diretorio: /Lista/index.tsx:  
 ```js
 import style from './Lista.module.scss';
