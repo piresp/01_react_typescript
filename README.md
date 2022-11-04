@@ -456,3 +456,57 @@ class Botao extends React.Component<{ type?: "button" | "submit" | "reset" | und
 
 export default Botao;
 ```
+
+### Interface:
+
+As interfaces são um forma de organizar nosso código e reaproveitar boa parte dele, para que não precisemos declarar as mesmas variaveis sempre.  
+>
+Como boa prática de programação é imprescindível criar uma pasta dentro de 'src/' chamada 'types/' para armazenar todas as interfaces criadas.  
+O código a seguir representa a interface de tarefa, nomeada como 'Itarefa'.  
+
+```js
+
+export interface Itarefa {
+    tarefa: string,
+    tempo: string
+}
+
+```
+
+Para importar, devemos receber 
+
+'Itarefa[]' será utilizada em 'Formulario/index.tsx' e 'Lista/index.tsx'.  
+>  
+O codigo a seguir é utilizado em 'Lista/index.tsx' para receber os parâmetros utilizando a interface como forma de deixar o codigo mais sucinto.  
+
+```js
+
+export default function Lista({ tarefas } : { tarefas: Itarefa[] }) {
+    ...
+}
+
+```
+
+Agora o 'Itarefas[]' sendo utilizado dentro de 'Formulario/index.tsx'.  
+
+```js
+
+export default function Lista({ tarefas } : { tarefas: Itarefa[] }) {
+    ...
+}
+
+```
+
+```js
+
+class Formulario extends React.Component<{ 
+    setTarefas: React.Dispatch<React.SetStateAction<Itarefa[]>>
+}> {
+    state = {
+        tarefa: "",
+        tempo: "00:00"
+    }
+    
+    ...
+
+```  
