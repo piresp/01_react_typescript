@@ -569,3 +569,17 @@ class Formulario extends React.Component<{
 
 }
 ```  
+
+### Resetando Valor do Formulário (SetState):
+
+Aqui nós simplesmente vamos passar os valores de tarefa e tempo para this.setState.
+
+```js
+adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        ...
+        this.setState({
+            tarefa: "",
+            tempo: "00:00:00"
+        })
+    }
+```
