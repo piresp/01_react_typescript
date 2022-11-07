@@ -64,6 +64,18 @@ Dentro de tsconfig.json:
 }
 ```
 
+Instalando uuid v4:
+```
+npm i uuid
+```
+```
+npm i --save-dev @types/uuid
+```
+
+Importando:
+```js
+import { v4 as uuidv4 } from 'uuid';
+```
 
 ### Criando Componente via Classe (deprecated):
 
@@ -569,3 +581,17 @@ class Formulario extends React.Component<{
 
 }
 ```  
+
+### Resetando Valor do Formulário (SetState):
+
+Aqui nós simplesmente vamos passar os valores de tarefa e tempo para this.setState.
+
+```js
+adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        ...
+        this.setState({
+            tarefa: "",
+            tempo: "00:00:00"
+        })
+    }
+```
