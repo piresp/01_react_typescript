@@ -64,6 +64,11 @@ Dentro de tsconfig.json:
 }
 ```
 
+Instalando uuid:
+```
+npm i uuid
+```
+
 
 ### Criando Componente via Classe (deprecated):
 
