@@ -64,11 +64,18 @@ Dentro de tsconfig.json:
 }
 ```
 
-Instalando uuid:
+Instalando uuid v4:
 ```
 npm i uuid
 ```
+```
+npm i --save-dev @types/uuid
+```
 
+Importando:
+```js
+import { v4 as uuidv4 } from 'uuid';
+```
 
 ### Criando Componente via Classe (deprecated):
 
